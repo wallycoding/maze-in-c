@@ -1,5 +1,6 @@
-#ifndef MAZE_H
 #include <stddef.h>
+#ifndef MAZE_H
+#define MAZE_H
 
 typedef enum { MAZE_WALL, MAZE_PATH } cell_type_t;
 

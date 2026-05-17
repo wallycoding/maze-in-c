@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 
 typedef struct {
   u_vec2_t value;
@@ -61,15 +60,13 @@ void free_maze(maze_t *maze) {
   free(maze);
 }
 
+/**
+ * the generation of the maze must be a srand(time(NULL))
+ */
 void generate_maze(maze_t *maze) {
-
-  static int stime;
 
   if (maze == NULL)
     return;
-
-  if (stime)
-    srand(stime = time(NULL));
 
   clear_maze(maze);
   open_maze(maze, (u_vec2_t){0, 1});

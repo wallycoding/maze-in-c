@@ -1,6 +1,6 @@
 
 compile:
-	gcc ./src/*.c -o main -Iinclude -lraylib
+	gcc ./src/*.c -o ./build/main -Iinclude -lraylib
 
 run: compile
-	./main
+	./build/main
