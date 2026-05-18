@@ -1,5 +1,6 @@
 #include "maze.h"
 #include <raylib.h>
+#include <stdint.h>
 
 #ifndef MAZE_SOLUTIONS_H
 #define MAZE_SOLUTIONS_H
@@ -8,7 +9,8 @@ typedef struct {
   maze_t *maze;
   u_vec2_t *paths;
   size_t path_len;
-  cell_type_t *visited;
+  // bitset de visitados, mesma ideia do maze->bits (1 bit por cell)
+  uint64_t *visited;
   u_vec2_t mouse;
   bool is_end;
 } maze_solution_t;
