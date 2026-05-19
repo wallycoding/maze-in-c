@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define WIDTH 800
-#define HEIGHT 800
-#define BLOCK 50
+#define WIDTH 999
+#define HEIGHT 999
+#define BLOCK 4
 
 int main(void) {
 
@@ -56,7 +56,7 @@ int main(void) {
       DrawCircle(
         spx + maze_solution->paths[i].x * BLOCK + (BLOCK/2),
         spy + maze_solution->paths[i].y * BLOCK + (BLOCK/2),
-        BLOCK/6,
+        BLOCK/4,
         BLUE
       );
     }
@@ -66,7 +66,7 @@ int main(void) {
       spy + maze_solution->mouse.y * BLOCK
     }, BLOCK);
 
-    mouse_speed += GetFrameTime() * 10;
+    mouse_speed += GetFrameTime() * 25;
     if (mouse_speed > 1.0f) {
       mouse_next_move(maze_solution);
       mouse_speed = 0;
